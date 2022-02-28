@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% load static %} {% block contents %}
+
+<form method="POST">
+  {% csrf_token %} {{form.error}}
+  <div class="container" id="CRUDTask2">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <img src="{% static 'assets/undraw_icon/detail.png' %}" alt="Pic Detail" />
+        <h1>Add Task</h1>
+      </div>
+      <div class="col-lg-1">
+        <div class="vl"></div>
+      </div>
+      <div class="col-lg-7">
+        <div class="card-body">
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="strProjectName" class="col-form-label">Project Name</label>
+              </div>
+              <div class="col-md-6">
+                <div class="form-control" id="strTask">{{ form.strProjectName }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="strTaskList" class="col-form-label">Task List</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Task List" class="form-control" name="{{form.strTaskList.name}}" maxlength="{{form.strTaskList.max}}" required id="{{form.strTaskList.id_for_label}}" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="strStatus" class="col-form-label">Status</label>
+              </div>
+              <div class="col-md-6">
+                <div class="form-control">{{ form.strStatus }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="strPriorty" class="col-form-label">Priorty</label>
+              </div>
+              <div class="col-md-6">
+                <div class="form-control">{{ form.strPriorty }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="dueDateTask" class="col-form-label">Due Date Task</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Due Date Task" class="form-control" name="{{form.dueDateTask.name}}" maxlength="{{form.dueDateTask.max}}" id="id_CdueDateTask" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <label for="dueDateProject" class="col-form-label">Due Date Project</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Date End Project" class="form-control" name="{{form.dueDateProject.name}}" maxlength="{{form.dueDateProject.max}}" id="id_CdueDateProject" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-4">
+                <label for="strNotes" class="col-form-label">Notes</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" placeholder="Notes" class="form-control" name="{{form.strNotes.name}}" maxlength="{{form.strNotes.max}}" required id="{{form.strNotes.id_for_label}}" />
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-5 text-left pt-2">
+              <a href="{% url 'taskList:index' %}">Back</a>
+            </div>
+
+            <div class="col-lg-5 text-right">
+              <button type="Submit">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById('id_CdueDateTask').setAttribute('type', 'date');
+        document.getElementById('id_CdueDateProject').setAttribute('type', 'date');
+      </script>
+    </div>
+  </div>
+</form>
+{% include 'fixed/footer.html' %} {% endblock contents %}

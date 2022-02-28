@@ -1,0 +1,192 @@
+@charset "UTF-8";
+h1 {
+  color: black;
+  text-align: center;
+}
+/* body {
+  background-image: url(../image/);
+  background-size: cover;
+} */
+/* for CRUD Project == CRUD Task/CRUD Task2 */
+#CRUDTask,
+#CRUDTask2 {
+  margin-top: 10rem;
+}
+#CRUDTask .col-lg-4 img,
+#CRUDTask2 .col-lg-4 img {
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+}
+#CRUDTask .vl,
+#CRUDTask2 .vl {
+  border-right: 6px solid #383771;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+}
+#CRUDTask .col-lg-7 .col-lg-10 a {
+  color: white;
+  background-color: #383771;
+  font-size: 15px;
+  padding: 5px 30px;
+  border: 2px solid white;
+}
+#CRUDTask .col-lg-7 .col-lg-10 a:hover {
+  text-decoration: none;
+}
+#CRUDTask .form-control {
+  background-color: #e9ecef;
+}
+#CRUDTask .bg-text {
+  background-color: #e9ecef;
+  margin: 7rem auto;
+  width: 60%;
+  padding: 25px;
+}
+#CRUD_index .nav-link {
+  color: white;
+  background-color: #383771;
+  font-size: 14px;
+  padding: 10px 0px;
+  border: 2px solid white;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+#CRUD_index .padd {
+  margin: 0px -20px;
+}
+#CRUD_index .bg-thead {
+  background-color: #383771;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+#CRUD_index .icon_crud a {
+  text-align: center;
+  color: black;
+}
+#CRUD_index .icon_crud a:hover {
+  text-decoration: none;
+}
+#footer {
+  margin-top: 125px;
+  text-align: center;
+  background-color: black;
+  height: 100px;
+  padding-top: 25px;
+  color: white;
+}
+#footer i {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+#footer a:hover {
+  text-decoration: none;
+}
+
+/* =========================================== */
+/* Create, Update & Delete */
+/* =========================================== */
+
+#CRUDTask2 .form-control {
+  background-color: white;
+}
+#CRUDTask2 .col-lg-7 .col-lg-5 a {
+  color: white;
+  background-color: #383771;
+  font-size: 16px;
+  padding: 5px 30px;
+  border: 2px solid white;
+}
+#CRUDTask2 .ab {
+  margin-top: 7px;
+}
+#CRUDTask2 .col-lg-7 .col-lg-5 a:hover {
+  text-decoration: none;
+}
+#CRUDTask2 .col-lg-7 .col-lg-5 button {
+  color: white;
+  background-color: #383771;
+  font-size: 15px;
+  padding: 5px 30px;
+  border: 2px solid white;
+}
+#CRUDTask2 .ro {
+  background-color: #e9ecef;
+}
+
+/* =========================================== */
+/* id for ddl form */
+/* =========================================== */
+#id_strStatus {
+  border: none;
+  width: 100%;
+  background-color: #e9ecef;
+}
+#id_strPriorty {
+  border: none;
+  width: 100%;
+  background-color: #e9ecef;
+}
+#CRUDTask2 #id_strStatus {
+  background-color: white;
+}
+#CRUDTask2 #id_strPriorty {
+  background-color: white;
+}
+#id_datetimeStartProject {
+  border: none;
+  width: 100%;
+}
+#id_dueDateTimeProject {
+  border: none;
+  width: 100%;
+}
+#id_dueDateTask {
+  border: none;
+  width: 100%;
+}
+#id_dueDateProject {
+  border: none;
+  width: 100%;
+}
+#strTask #id_strProjectName {
+  border: none;
+  width: 100%;
+}
+
+/* =========================================== */
+/* Mobile Device */
+/* =========================================== */
+@media (max-width: 992px) {
+  #CRUDTask {
+    margin-top: 1.5rem;
+  }
+  #CRUDTask .col-lg-4 img {
+    margin-top: 0rem;
+  }
+  #CRUDTask .vl {
+    border-right: none;
+    height: 10px;
+    border-top: 6px solid #383771;
+    padding-bottom: 2rem;
+  }
+  #CRUDTask2 {
+    margin-top: 1.5rem;
+  }
+  #CRUDTask2 .col-lg-4 img {
+    margin-top: 0rem;
+  }
+  #CRUDTask2 .vl {
+    border-right: none;
+    height: 10px;
+    border-top: 6px solid #383771;
+    padding-bottom: 2rem;
+  }
+  #CRUDTask_index .padd {
+    margin: 0px auto;
+  }
+}

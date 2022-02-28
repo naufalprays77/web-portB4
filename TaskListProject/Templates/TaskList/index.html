@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% load static %} {% block contents %} {{form.errors}}
+<form method="POST">
+  {% csrf_token %} {{form.error}}
+  <section class="TL" id="CRUD_index">
+    <div class="container">
+      {% comment %} title {% endcomment %}
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-12 col-12">
+          <h1 class="text-center mt-5">Task List</h1>
+        </div>
+      </div>
+      {% comment %} nav menu {% endcomment %}
+      <div class="row justify-content-end mb-5 mt-5">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-12 p-0 padd">
+          <a class="nav-link" href="{% url 'taskList:create' %}">Add Task</a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-12 p-0 padd">
+          <a class="nav-link" href="{% url 'projectList:index' %}">View Project</a>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-12 p-0 padd">
+          <a class="nav-link" href="{% url 'projectList:create' %}">Add Project</a>
+        </div>
+      </div>
+      {% comment %} index list {% endcomment %}
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-12">
+          <div class="row">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered" id="dtTable">
+                <thead class="bg-thead">
+                  <tr>
+                    <th scope="col">Project Name</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Priorty</th>
+                    <th scope="col">Due date Project</th>
+                    <th scope="col">Notes</th>
+                    <th scope="col">cad</th>
+                  </tr>
+                </thead>
+                {% for task in taskList %}
+                <tbody>
+                  <tr>
+                    <td>{{task.strProjectName}}</td>
+                    <td>{{task.strTaskList}}</td>
+                    <td>{{task.strStatus}}</td>
+                    <td>{{task.strPriorty}}</td>
+                    <td>{{task.dueDateTask}}</td>
+                    <td>{{task.strNotes|truncatechars:5}}</td>
+                    <td class="icon_crud text-center">
+                      <a href="{% url 'taskList:detail' task.id %}" method="post"><i class="icofont-look"></i></a>
+                      <a href="{% url 'taskList:update' task.id %}" method="post"><i class="icofont-folder-open"></i></a>
+                      <a href="{% url 'taskList:delete' task.id %}" method="post"><i class="icofont-ui-delete"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
+<!-- {% include 'fixed/footer.html' %} {% endblock contents %} -->

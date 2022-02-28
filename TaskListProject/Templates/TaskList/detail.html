@@ -1,0 +1,117 @@
+{% extends "base.html" %}{% load static %} {% block title %} {{page_title}} {% endblock title %} {% block contents %}
+
+<form method="POST">
+  {% csrf_token %}
+  <fieldset disabled="disabled">
+    <div class="container" id="CRUDTask">
+      <div class="row justify-content-center">
+        <div class="col-lg-4">
+          <img src="{% static 'assets/undraw_icon/detail.png' %}" alt="Pic Detail" />
+          <h1>{{page_title}} <br />Task</h1>
+        </div>
+        <div class="col-lg-1">
+          <div class="vl"></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card-body">
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="{{data_form.strProjectName.id_for_label}}">Project Name</label>
+                </div>
+                <div class="col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="{{data_form.strProjectName.name}}"
+                    maxlength="{{data_form.strProjectName.max}}"
+                    required
+                    id="{{data_form.strProjectName.id_for_label}}"
+                    value="{{data_form.strProjectName.value}}"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="{{data_form.strTaskList.id_for_label}}">Task List</label>
+                </div>
+                <div class="col-lg-6">
+                  <input type="text" class="form-control" name="{{data_form.strTaskList.name}}" maxlength="{{data_form.strTaskList.max}}" required id="{{data_form.strTaskList.id_for_label}}" value="{{data_form.strTaskList.value}}" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="strStatus" class="col-form-label">Status</label>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-control">{{ data_form.strStatus }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="strPriorty" class="col-form-label">Priorty</label>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-control">{{ data_form.strPriorty }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="{{data_form.dueDateTask.id_for_label}}">Due Date Task</label>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-control">{{ data_form.dueDateTask }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="{{data_form.dueDateProject.id_for_label}}">Due Date project</label>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-control">{{ data_form.dueDateProject }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row justify-content-center">
+                <div class="col-lg-4">
+                  <label for="{{data_form.strNotes.id_for_label}}">Notes</label>
+                </div>
+                <div class="col-lg-6">
+                  <input type="text" class="form-control" name="{{data_form.strNotes.name}}" maxlength="{{data_form.strNotes.max}}" required id="{{data_form.strNotes.id_for_label}}" value="{{data_form.strNotes.value}}" />
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-10 text-left">
+                <a href="{% url 'taskList:index' %}">Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.getElementById('id_dueDateTask').setAttribute('type', 'date');
+          document.getElementById('id_dueDateProject').setAttribute('type', 'date');
+        </script>
+      </div>
+    </div>
+  </fieldset>
+</form>
+{% include 'fixed/footer.html' %} {% endblock contents %}

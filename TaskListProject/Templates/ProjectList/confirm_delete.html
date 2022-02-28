@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %}{% block title %} {{page_title}} {% endblock title %} {% block contents %} {{form.errors}}
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="container" id="CRUDTask">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <img src="{% static 'assets/undraw_icon/detail.png' %}" alt="Pic Detail" />
+        <h1>
+          Delete Data <br />
+          Project
+        </h1>
+      </div>
+      <div class="col-lg-1">
+        <div class="vl"></div>
+      </div>
+      <div class="col-lg-7 text-center">
+        <div class="bg-text">
+          <p>Are you sure you want to delete this task ?<br /><b>{{object}}</b></p>
+
+          <input type="Submit" value="Yes" />
+          <a href="{% url 'projectList:index'%}">
+            <input type="button" value="No" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock contents %}
