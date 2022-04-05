@@ -6,7 +6,7 @@ from AppGeneral.models import Status,Priorty
     
 class ProjectList(models.Model):
     strIDProject            = models.TextField(max_length=20)
-    strProjectName          = models.TextField(max_length=20)
+    strProjectName          = models.TextField(max_length=100)
     strProjectDescription   = models.TextField(max_length=100)
     strStatus               = models.ForeignKey(Status, on_delete=models.CASCADE, max_length=30)
     strPriorty              = models.ForeignKey(Priorty, on_delete=models.CASCADE, max_length=30)
